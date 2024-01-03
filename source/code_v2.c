@@ -261,7 +261,7 @@
 #define CMD_FORTH_LVL_RIGHT_SERVOS    623
 
 
-//Ezekbıl kÈsıbb annyi db kell, ah·ny szervo van, mert egyedi ÈrtÈkek lesznek n·luk.
+//Ezekb√µl k√©s√µbb annyi db kell, ah√°ny szervo van, mert egyedi √©rt√©kek lesznek n√°luk.
 //#define SERVOMIN  95
 //#define SERVOMAX  460
 
@@ -302,7 +302,7 @@ struct Servo
   
 };
 
-//real time servo positions (24 db 0-180ig tartÛ ÈrtÈket rˆgzÌt¸nk benne)
+//real time servo positions (24 db 0-180ig tart√≥ √©rt√©ket r√∂gz√≠t√ºnk benne)
 Servo servos[SERVO_COUNT];
 
 //valves
@@ -325,17 +325,17 @@ void setup()
   pwm.begin();
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
   
-  //90 fokra ·llÌtani ıket???
+  //90 fokra √°ll√≠tani √µket???
   for(char i = 0; i < SERVO_COUNT; i++)
   {
-    servos[i].min = 95;   //ezeket kÈsıbb konstanskÈnt vessz¸k majd fel, szervÛnkÈnt k¸lˆn k¸lˆn...
-    servos[i].max = 460;  //ezeket kÈsıbb konstanskÈnt vessz¸k majd fel, szervÛnkÈnt k¸lˆn k¸lˆn...
-    //valami ehhez hasonlÛ hasznos lenne!!!
-    servos[i].pos = 280;              //be kell majd ·llÌtani az alap pozÌciÛkat
+    servos[i].min = 95;   //ezeket k√©s√µbb konstansk√©nt vessz√ºk majd fel, szerv√≥nk√©nt k√ºl√∂n k√ºl√∂n...
+    servos[i].max = 460;  //ezeket k√©s√µbb konstansk√©nt vessz√ºk majd fel, szerv√≥nk√©nt k√ºl√∂n k√ºl√∂n...
+    //valami ehhez hasonl√≥ hasznos lenne!!!
+    servos[i].pos = 280;              //be kell majd √°ll√≠tani az alap poz√≠ci√≥kat
     pwm.setPWM(i, 0, servos[i].pos);
   }
   
-  //init valves (szelepek vezÈrlÈse)
+  //init valves (szelepek vez√©rl√©se)
   valves = 0;
   for(char i = 0; i < 7; i++)
   {
@@ -603,10 +603,10 @@ void digit_to_buffer(unsigned char digit)
 
 void numbered_command()
 {
-  //csekkoljuk, hogy megfelelı e commandnak a sorsz·ma
-  //megfelelı sorrendben nyomkodtuk e a gombokat
-  //a vÈgÈn ha vÈgrehajtottuk a parancsot, akkor a cmd_buffer tartalm·t null·zni kell
-  //4 jegy˚ legyen a cmd_buffer
+  //csekkoljuk, hogy megfelel√µ e commandnak a sorsz√°ma
+  //megfelel√µ sorrendben nyomkodtuk e a gombokat
+  //a v√©g√©n ha v√©grehajtottuk a parancsot, akkor a cmd_buffer tartalm√°t null√°zni kell
+  //4 jegy√ª legyen a cmd_buffer
   
   //create command number from digits
   unsigned int cmd_num = 0;
@@ -774,15 +774,15 @@ void numbered_command()
   clear_buffer();
 }
 
-//ezeket elt·roljuk majd valami v·ltozÛban is???
-//szelep vezÈrlÈs, bekapcs
+//ezeket elt√°roljuk majd valami v√°ltoz√≥ban is???
+//szelep vez√©rl√©s, bekapcs
 void turn_on_valve(char num)
 {
   digitalWrite(num, HIGH);
   delay(DELAY_SEC);
 }
 
-//szelep vezÈrlÈs, kikapcs
+//szelep vez√©rl√©s, kikapcs
 void turn_off_valve(char num)
 {
   digitalWrite(num, LOW);
